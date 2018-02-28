@@ -31,6 +31,13 @@ public:
     }
 };
 
+class Zap : public IMagicSpell {
+public:
+    virtual void cast_spell(std::ostream& out) override {
+        out << "Zap!" << std::endl;
+    }
+};
+
 // *** Your task is to implement a class named Zap
 // that inherits from IMagicSpell, and overrides cast_spell()
 // similarly to the other classes to print "Zap!" on its own line when
@@ -50,7 +57,7 @@ int main() {
     ////////////////////////////////////////////////////////////////////// 
     ////                UNCOMMENT THIS LINE OF CODE BELOW             ////
     //////////////////////////////////////////////////////////////////////
-    // spells.push_back(new Zap());
+    spells.push_back(new Zap());
     
     std::stringstream ss;
     

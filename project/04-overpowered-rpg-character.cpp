@@ -102,10 +102,18 @@ public:
 
 /* Create the Goblin and Wizard classes here */
 
+class Goblin : public Unit {
+    public:
+        Goblin(std::string goblinname) : Unit(goblinname, 100, 10, 10, 10) {}	
+};
 
-
-
-
+class Wizard : public Unit {
+    public: 
+        Wizard(std::string wizardname) : Unit(wizardname, 1000, 100, 10, 0) {}
+        void blizzard(Goblin& other) {
+            other.set_defense(0);
+        }
+};
 
 /* ******************************************** */
 

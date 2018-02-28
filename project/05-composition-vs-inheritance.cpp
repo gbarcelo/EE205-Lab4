@@ -37,9 +37,10 @@ public:
 // INSTEAD, HAVE WIZARD OWN A MAGICSTAFF OBJECT THAT IT WILL CALL IN 
 // Wizard.cast_spell().
 
-class Wizard : public Human, public MagicStaff {
+class Wizard : public Human {
 private:
     int num_spells_casted;
+    MagicStaff examhammer;
 
 public:
     Wizard(std::string name) :
@@ -58,7 +59,7 @@ public:
             ++num_spells_casted;
         } else {
             for (int i = 0; i < num_spells_casted; ++i) {
-                this->cast_fireball();
+                examhammer.cast_fireball();
             }
             ++num_spells_casted;
         }
